@@ -1,0 +1,22 @@
+<form #form="ngForm" (ngSubmit)="onSubmit()" *ngIf="active">
+
+      <div class="form-group commentInput" [ngClass]="{ 'has-error': name.invalid && name.touched }">
+        <input type="text" class="form-control commentInput"
+          name="name" placeholder="Name" required
+          [(ngModel)]="newUser.name" #name="ngModel">
+
+        <span class="help-block" *ngIf="name.invalid && name.touched">Name is required.</span>
+      </div>
+
+      <div class="form-group commentInput" [ngClass]="{ 'has-error': username.invalid && username.touched }">
+        <input type="text" class="form-control commentInput" name="username" placeholder="Comment" 
+        required [(ngModel)]="newUser.username" #username="ngModel">
+
+        <span class="help-block" *ngIf="username.invalid && username.touched">Comment can't be empty.</span>
+      </div>
+
+      <button type="submit" class="addComment" [disabled]="form.invalid">
+        ADD
+      </button>
+
+</form>
