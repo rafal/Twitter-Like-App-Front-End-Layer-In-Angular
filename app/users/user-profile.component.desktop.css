@@ -1,39 +1,36 @@
-@media only screen and (max-width : 499px) {
+@media only screen and (min-width : 499px) {
   .container{
-    text-align: center;
     box-shadow: 0 0 4px 0 rgba(172,172,172,0.50);
     border-radius: 5px;
     padding: 0;
-    margin: 0;
-    position: relative;
-    min-width: 200px;
-    max-width: 500px;
+    min-width: 500px;
     height: 743px;
-    margin-right: 15px;
-    margin-top: -30px;
     font-family: 'Montserrat', sans-serif;
+    position: relative;
   }
+
   .profile-picture{
-    left: 50%;
-    top: -40px;
-    margin-left: -35px;
-    position: absolute;
     width: 70px;
     height: 70px;
-    margin-top: 0;
+    display: inline-block;
+    position: absolute;
+    left: 15px;
+    top: 15px;
   }
+
   .profile-info{  
-    left: 8.5%;
-    right: 8.5%;
+    left: 3%;
+    right: 3%;
     background: #FFFFFF;
     box-shadow: 0 0 4px 0 rgba(172,172,172,0.50);
     border-radius: 5px;
     position: absolute;
-    top: 33px;
+    top: 43px;
     z-index: 0;
     margin: 0;
     padding: 0;
   }
+
   .top-strip{
     background: #002C71;
     border-radius: 5px 5px 0 0;
@@ -47,38 +44,46 @@
     color: #002C71;
     font-size: 18px;
     display: inline-block;
-    margin-left: 25px;
-    margin-top: 40px;
-    margin-bottom: 0;
+    position: absolute;
+    left: 105px;
+    top: 30px;
   }
+
   .heart{
     display: inline-block;
     margin-left: 6px;
     font-size: 14px;
   }
+
   .profile-user-location{
     color: #8298B9;
     font-size: 12px;
     padding: 0;
     margin: 0;
+    position: absolute;
+    left: 105px;
+    top: 60px;
     line-height: 0;
   }
+
   .line{
     display: inline-block;
     border-left: solid #979797;
     height: 38px;
     opacity: 0.1;
+    margin-left: 20px;
+    margin-right: 20px;
   }
+
   .orange-number-left{
-    float: left;
     display: inline-block;
     font-size: 24px;
     color: #FFA640;
     margin-bottom: 0;
-    margin-top: 30px;
-    margin-left: 10%;
+    margin-top: 105px;
+    margin-left: 25px;
     padding: 0;
-    margin-right: 2%;
+    
   }
   .orange-number-middle{
     display: inline-block;
@@ -86,21 +91,17 @@
     color: #FFA640;
     margin-bottom: 0;
     margin-top: 30px;
-    padding-left: 9%;
-    margin-right: 9%;
-    margin-left: 3%;
+
   }
   .orange-number-right{
-    margin-right: 10%;
-    float: right;
     display: inline-block;
     font-size: 24px;
     color: #FFA640;
-    margin-bottom: 0;
+    margin-bottom: 25px;
     margin-top: 30px;
-    
     padding: 0;
   }
+
   .likes-text{
     font-size:10px;
     color: #8298B9;
@@ -108,43 +109,52 @@
     padding-bottom: 10px;
     line-height: 0;
   }
+
   .button-follow{
     background: #FFA640;
     letter-spacing: 4.2px;
     border-radius: 100px;
     border: none;
     color: white;
-    width: 85%;
-    height: 46px;
-    margin-top: 12px;
-    margin-bottom: 13px;
     font-weight: bold;
     outline: none;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 25px;
+    padding-left: 25px;
+    position: absolute;
+    top: 103px;
+    left: 280px;
   }
+
   .comments{
-    left: 8.5%;
-    right: 8.5%;
+    left: 3%;
+    right: 3%;
     background: #FFFFFF;
     box-shadow: 0 0 4px 0 rgba(172,172,172,0.50);
     border-radius: 5px;
     position: absolute;
-    top: 245px;
+    top: 215px;
     margin-bottom: 30px;
     margin-top: 15px;
   }
+
   .users-list li {
     cursor: pointer;
   }
+
   .hide-comments{
     text-decoration: underline;
     font-size: 14px;
     color: #FFA640;
     letter-spacing: 0;
-    margin-top: 15px;
+    margin-top: 20px;
     margin-bottom: 15px;
-    cursor: pointer;
+    margin-left: 25px;
   }
+
   .line-horizontal{
+    
     border-bottom: solid #979797;
     height: 1px;
     opacity: 0.1;
@@ -155,8 +165,9 @@
     color: #FFA640;
     font-size: 15px;
     position:absolute;
-    top:3%;
-    right:3%;
+    top:10px;
+    right:12px;
     z-index: 2;
+    cursor: pointer;
   }
 }

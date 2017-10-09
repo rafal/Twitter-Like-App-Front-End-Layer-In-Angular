@@ -5,7 +5,9 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'user-profile',
   templateUrl: './app/users/user-profile.component.html',
-  styleUrls: []
+  styleUrls: ['./app/users/user-profile.component.css',
+              './app/users/user-profile.component.desktop.css',
+              './app/users/heart-animation.css']
 })
 export class UserProfileComponent {
   currentURL='';
