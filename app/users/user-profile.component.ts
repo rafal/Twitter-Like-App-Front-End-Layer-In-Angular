@@ -13,6 +13,8 @@ export class UserProfileComponent {
         this.currentURL=window.location.href;
     }
   commentsVisible:boolean = true;
+  commentInputSelected:boolean = false;
+  commentUserNameSelected:boolean = false;
   followers:number = 4433;
   following:boolean = false;
   likes:number = 121;
@@ -64,7 +66,12 @@ export class UserProfileComponent {
     }
   }
   ngOnInit() {
-        
         console.log(this.currentURL);
     }
+  selectCommentInput(){
+    this.commentInputSelected = true;
+  }
+  selectCommentUserName(){
+    this.commentUserNameSelected = true;
+  }
 }

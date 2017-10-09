@@ -1,21 +1,25 @@
 <form #form="ngForm" (ngSubmit)="onSubmit()" *ngIf="active">
 
-      <div class="form-group commentInput" [ngClass]="{ 'has-error': name.invalid && name.touched }">
-        <input type="text" class="form-control commentInput"
-          name="name" placeholder="Name" required
-          [(ngModel)]="newUser.name" #name="ngModel">
+      
 
-        <span class="help-block" *ngIf="name.invalid && name.touched">Name is required.</span>
-      </div>
-
-      <div class="form-group commentInput" [ngClass]="{ 'has-error': username.invalid && username.touched }">
-        <input type="text" class="form-control commentInput" name="username" placeholder="Comment" 
+      <div class="form-group commentInput" (click)="selectCommentInput()"   [ngClass]="{ 'has-error': username.invalid && username.touched }">
+        <input type="text" class="form-control commentInput" style="border: hidden;
+        color: #8298B9; font-size: 18px;" name="username" placeholder="Add a comment" 
         required [(ngModel)]="newUser.username" #username="ngModel">
-
-        <span class="help-block" *ngIf="username.invalid && username.touched">Comment can't be empty.</span>
+<div style="border-bottom: 2px solid #DBE0E8; margin: 0; padding: 0; line-height: 0;"></div>
+        <span class="help-block" style="text-align: left" *ngIf="username.invalid && username.touched">Comment can't be empty.</span>
+        
       </div>
-
-      <button type="submit" class="addComment" [disabled]="form.invalid">
+      <div *ngIf="commentInputSelected" (click)="selectCommentUserName()" class="form-group commentInput"  [ngClass]="{ 'has-error': name.invalid && name.touched }">
+        <input type="text" class="form-control commentInput" style="border: hidden;
+        color: #8298B9; font-size: 18px;"
+          name="name" placeholder="What's your name?" required
+          [(ngModel)]="newUser.name" #name="ngModel">
+<div style="border-bottom: 2px solid #DBE0E8; margin: 0; padding: 0; line-height: 0;"></div>
+        <span class="help-block" style="text-align: left" *ngIf="name.invalid && name.touched">Name is required.</span>
+        
+      </div>
+      <button *ngIf="commentUserNameSelected" type="submit" class="addComment" [disabled]="form.invalid">
         ADD
       </button>
 

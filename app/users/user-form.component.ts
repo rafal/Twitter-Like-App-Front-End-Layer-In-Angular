@@ -19,4 +19,10 @@ export class UserFormComponent {
     this.active = false;
     setTimeout(() => this.active = true, 0);
   }
+  selectCommentInput(){
+    this.commentInputSelected = true;
+  }
+  selectCommentUserName(){
+    this.commentUserNameSelected = true;
+  }
 }
