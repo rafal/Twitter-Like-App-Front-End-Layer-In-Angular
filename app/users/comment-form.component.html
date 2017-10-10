@@ -1,0 +1,24 @@
+<form #form="ngForm" (ngSubmit)="onSubmit()" *ngIf="active">
+
+  <div (click)="selectCommentInput()" [ngClass]="{ 'has-error': comment.invalid && comment.touched }">
+    <input type="text" class="form-control commentInput" name="username" placeholder="Add a comment" required [(ngModel)]="newComment.comment" #comment="ngModel">
+    <div class="line-horizontal-add-comment"></div>
+    <span class="help-block" style="text-align: left"
+      *ngIf="comment.invalid && comment.touched">
+      Comment can't be empty.
+    </span>
+  </div>
+
+  <div *ngIf="commentInputSelected" (click)="selectCommentUserName()" [ngClass]="{ 'has-error': username.invalid && username.touched }">
+    <input type="text" class="form-control commentInput" name="username" placeholder="What's your name?" required [(ngModel)]="newComment.username" #username="ngModel">
+    <div class="line-horizontal-add-comment"></div>
+    <span class="help-block" style="text-align: left" *ngIf="username.invalid && username.touched">
+      Name is required.
+    </span>
+  </div>
+
+  <button *ngIf="commentUserNameSelected" type="submit" class="addComment" [disabled]="form.invalid">
+    ADD
+  </button>
+
+</form>

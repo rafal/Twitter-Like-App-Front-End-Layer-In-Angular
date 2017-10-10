@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { User } from '../shared/models/user';
+import { Comment } from '../shared/models/comment';
 import { Router } from '@angular/router';
 
 @Component({
@@ -22,23 +22,22 @@ export class UserProfileComponent {
   likes:number = 121;
   like:boolean = false;
   followStr:string = "FOLLOW";
-  @Input() user: User;
-  users: User[] = [
+  @Input() comment: Comment;
+  comments: Comment[] = [
     { id: 25,
-      name: 'Mike Ross',
-      username: 'Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. '},
-    { id: 26, name: 'Mike Ross', username: 'Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. '},
-    { id: 27, name: 'Mike Ross', username: 'Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. '},
-    { id: 28, name: 'Mike Ross', username: 'Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. '},
-    { id: 29, name: 'Mike Ross', username: 'Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. '}
+      username: 'Mike Ross',
+      comment: 'Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. '},
+    { id: 26, username: 'Mike Ross', comment: 'Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. '},
+    { id: 27, username: 'Mike Ross', comment: 'Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. '},
+    { id: 28, username: 'Mike Ross', comment: 'Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. '},
+    { id: 29, username: 'Mike Ross', comment: 'Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. '}
   ]; 
-  activeUser: User;
-  onUserCreated(event){
-    this.users.push(event.user);
+  onCommentCreated(event){
+    this.comments.push(event.comment);
   }
-  selectUser(user){
-    this.activeUser = user;
-    console.log(this.activeUser);
+  selectComment(comment){
+  this.activeComment = comment;
+  console.log(this.activeComment);
   }
   liker(){
     if (this.like) {
@@ -67,9 +66,6 @@ export class UserProfileComponent {
       this.commentsVisible = true;
     }
   }
-  ngOnInit() {
-        console.log(this.currentURL);
-    }
   selectCommentInput(){
     this.commentInputSelected = true;
   }

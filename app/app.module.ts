@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { UserProfileComponent } from './users/user-profile.component';
-import { UserFormComponent } from './users/user-form.component';
+import { CommentFormComponent } from './users/comment-form.component';
 
 
 @NgModule({
@@ -16,7 +16,7 @@ import { UserFormComponent } from './users/user-form.component';
   declarations: [
     AppComponent,
     UserProfileComponent,
-    UserFormComponent
+    CommentFormComponent
     
 ],
   bootstrap: [ AppComponent ]
