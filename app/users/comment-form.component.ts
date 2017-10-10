@@ -18,6 +18,7 @@ export class CommentFormComponent {
     this.newComment = new Comment();
     this.active = false;
     setTimeout(() => this.active = true, 0);
+    console.log(new Date(this.newComment.date));
   }
   selectCommentInput(){
     this.commentInputSelected = true;

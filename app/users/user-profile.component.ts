@@ -24,14 +24,38 @@ export class UserProfileComponent {
   followStr:string = "FOLLOW";
   @Input() comment: Comment;
   comments: Comment[] = [
-    { id: 25, username: 'Mike Ross', comment: 'Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. '},
-    { id: 26, username: 'Mike Ross', comment: 'Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. '},
-    { id: 27, username: 'Mike Ross', comment: 'Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. '},
-    { id: 28, username: 'Mike Ross', comment: 'Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. '},
-    { id: 29, username: 'Mike Ross', comment: 'Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. '}
-  ]; 
+    { id: 25, username: 'Mike Ross', comment: 'Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. ', date: 1300387742223},
+    { id: 26, username: 'Mike Ross', comment: 'Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. ', date: 1400387742223},
+    { id: 27, username: 'Mike Ross', comment: 'Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. ', date: 1500387742223},
+    { id: 28, username: 'Mike Ross', comment: 'Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. ', date: 1507495742223},
+    { id: 29, username: 'Mike Ross', comment: 'Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. ', date: new Date().getTime()}
+  ];
+  showDateDiff(date){
+    var today = new Date().getTime();
+    console.log("today = " + today);
+    var diff = today-date;
+    console.log("diff = " + diff);
+    var days = diff / 1000 / 60 / 60 / 24;
+    var months = days / 30;
+    var years = months / 12;
+    if (days < 1){
+      return "Today";
+    } else {
+      if (days < 30) {
+        return "" + Math.round(days) + "d";
+      } else {
+        if (days < 365){
+          return "" + Math.round(months) + "m";
+        } else{
+        return "" + Math.round(years) + "y";
+        }
+      }
+    }
+  }
   onCommentCreated(event){
+    event.comment.date = new Date().getTime();
     this.comments.push(event.comment);
+
   }
   selectComment(comment){
     this.activeComment = comment;

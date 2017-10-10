@@ -55,7 +55,13 @@
           <div style="color: #002C71; font-size: 14px; text-align: left; margin-bottom: 0; display: inline-block; float: left;padding-bottom: 0;">{{ comment.username }}
           </div> 
 
-          <div style="text-align: left; margin-left: 45px;clear: both; margin-left: 58px; margin-right: 20px; margin-top: 0; padding-top: 0;">{{ comment.comment }}</div>
+          <div class="date-diff">{{showDateDiff(comment.date)}}
+          </div> 
+
+          <div style="text-align: left; margin-left: 45px;clear: both; margin-left: 58px; margin-right: 20px; margin-top: 0; padding-top: 0;">
+            {{ comment.comment }} 
+          </div>
+
           <div class="line-horizontal">
           </div>
 

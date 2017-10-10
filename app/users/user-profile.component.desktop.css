@@ -174,4 +174,12 @@
   .activec{
     background: #f7f7f7;
   }
+  .date-diff{
+    opacity: 0.5;
+    font-size: 14px;
+    color: #002C71;
+    letter-spacing: 0;
+    float: right;
+    margin-right: 10px;
+  }
 }
