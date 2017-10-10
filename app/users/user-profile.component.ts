@@ -12,8 +12,8 @@ import { Router } from '@angular/router';
 export class UserProfileComponent {
   currentURL='';
   constructor() {
-        this.currentURL=window.location.href;
-    }
+    this.currentURL=window.location.href;
+  }
   commentsVisible:boolean = true;
   commentInputSelected:boolean = false;
   commentUserNameSelected:boolean = false;
@@ -24,9 +24,7 @@ export class UserProfileComponent {
   followStr:string = "FOLLOW";
   @Input() comment: Comment;
   comments: Comment[] = [
-    { id: 25,
-      username: 'Mike Ross',
-      comment: 'Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. '},
+    { id: 25, username: 'Mike Ross', comment: 'Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. '},
     { id: 26, username: 'Mike Ross', comment: 'Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. '},
     { id: 27, username: 'Mike Ross', comment: 'Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. '},
     { id: 28, username: 'Mike Ross', comment: 'Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. '},
@@ -36,8 +34,8 @@ export class UserProfileComponent {
     this.comments.push(event.comment);
   }
   selectComment(comment){
-  this.activeComment = comment;
-  console.log(this.activeComment);
+    this.activeComment = comment;
+    console.log(this.activeComment);
   }
   liker(){
     if (this.like) {
@@ -60,11 +58,7 @@ export class UserProfileComponent {
     }
   }
   toggleComments(){
-    if (this.commentsVisible) {
-      this.commentsVisible = false;
-    } else {
-      this.commentsVisible = true;
-    }
+    this.commentsVisible = (this.commentsVisible) ? false : true;
   }
   selectCommentInput(){
     this.commentInputSelected = true;

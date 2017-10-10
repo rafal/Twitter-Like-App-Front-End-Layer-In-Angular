@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { UserProfileComponent } from './users/user-profile.component';
 import { CommentFormComponent } from './users/comment-form.component';
 
-
 @NgModule({
   imports: [
     NgbModule.forRoot(),
@@ -17,7 +16,6 @@ import { CommentFormComponent } from './users/comment-form.component';
     AppComponent,
     UserProfileComponent,
     CommentFormComponent
-    
 ],
   bootstrap: [ AppComponent ]
 })
