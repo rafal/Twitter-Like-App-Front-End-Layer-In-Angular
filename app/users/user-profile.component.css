@@ -131,6 +131,7 @@
     top: 245px;
     margin-bottom: 15px;
     margin-top: 15px;
+    padding-right: 5px;
   }
   .users-list li {
     cursor: pointer;

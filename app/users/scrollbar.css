@@ -1,0 +1,16 @@
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 100px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  opacity: 0.3;
+  background: #efefef;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  opacity: -0.88;
+  background: #D5DAE3;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #c6cbd3;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:active {}
