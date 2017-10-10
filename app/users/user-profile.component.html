@@ -11,12 +11,12 @@
     <div class="profile-picture">
     <img style="max-width: 100%; max-height: 100%;border-radius: 100%;" src="./app/users/harv.png">
   </div>
-    <div class="profile-user-full-name">Harvey Specter<div class="heart" ng-controller="ExampleController">
+    <div class="profile-user-full-name">{{name}}<div class="heart" ng-controller="ExampleController">
       <input id="toggle-heart" type="checkbox" ng-model="confirmed" (click)="liker()"/>
       <label for="toggle-heart">❤</label>
     </div></div>
     
-    <div class="profile-user-location">New York, USA</div>
+    <div class="profile-user-location">{{location}}</div>
     <div class="share" placement="left"  container="profile-info"
         ngbPopover="{{currentURL}}" popoverTitle="Share"><i class="fa fa-share-square-o" aria-hidden="true" ></i></div>
     <div class="orange-number-left">
@@ -25,7 +25,7 @@
     </div>
     <div class="line"></div>
     <div class="orange-number-middle">
-    723
+    {{following}}
     <div class="likes-text">Following</div>
     </div>
     <div class="line"></div>

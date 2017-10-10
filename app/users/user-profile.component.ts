@@ -1,40 +1,40 @@
+import { Injectable }  from '@angular/core';
+import { Http, Response, Headers, RequestOptions } from '@angular/http';
+import { HttpModule } from '@angular/http';
 import { Component, Input } from '@angular/core';
 import { Comment } from '../shared/models/comment';
 import { Router } from '@angular/router';
+import {Observable} from 'rxjs/Rx';
 
 @Component({
   selector: 'user-profile',
   templateUrl: './app/users/user-profile.component.html',
   styleUrls: ['./app/users/user-profile.component.css',
               './app/users/user-profile.component.desktop.css',
-              './app/users/heart-animation.css']
+              './app/users/heart-animation.css',
+              './app/users/scrollbar.css']
 })
 export class UserProfileComponent {
   currentURL='';
-  constructor() {
+  constructor(private http: Http) {
     this.currentURL=window.location.href;
   }
   commentsVisible:boolean = true;
   commentInputSelected:boolean = false;
   commentUserNameSelected:boolean = false;
-  followers:number = 4433;
-  following:boolean = false;
-  likes:number = 121;
+  followers:number = 0;
+  alreadyFollowing:boolean = false;
+  following:number = 0;
+  likes:number = 0;
   like:boolean = false;
   followStr:string = "FOLLOW";
+  name:string = "";
+  location:string = "";
   @Input() comment: Comment;
-  comments: Comment[] = [
-    { id: 25, username: 'Mike Ross', comment: 'Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. ', date: 1300387742223},
-    { id: 26, username: 'Mike Ross', comment: 'Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. ', date: 1400387742223},
-    { id: 27, username: 'Mike Ross', comment: 'Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. ', date: 1500387742223},
-    { id: 28, username: 'Mike Ross', comment: 'Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. ', date: 1507495742223},
-    { id: 29, username: 'Mike Ross', comment: 'Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. ', date: new Date().getTime()}
-  ];
+  comments: Comment[] = [];
   showDateDiff(date){
     var today = new Date().getTime();
-    console.log("today = " + today);
     var diff = today-date;
-    console.log("diff = " + diff);
     var days = diff / 1000 / 60 / 60 / 24;
     var months = days / 30;
     var years = months / 12;
@@ -71,12 +71,12 @@ export class UserProfileComponent {
     }
   }
   follow(){
-    if (this.following) {
-      this.following = false;
+    if (this.alreadyFollowing) {
+      this.alreadyFollowing = false;
       this.followers--;
       this.followStr = "FOLLOW"
     } else {
-      this.following = true;
+      this.alreadyFollowing = true;
       this.followers++;
       this.followStr = "FOLLOWING"
     }
@@ -89,5 +89,20 @@ export class UserProfileComponent {
   }
   selectCommentUserName(){
     this.commentUserNameSelected = true;
+  }
+  getJSON(){
+    var xhReq = new XMLHttpRequest();
+    xhReq.open("GET", "./app/users/data.json", false);
+    xhReq.send(null);
+    return JSON.parse(xhReq.responseText);
+  }
+  ngOnInit(){
+    var data = this.getJSON();
+    this.comments = data.comments;
+    this.followers = data.followers;
+    this.following = data.following;
+    this.name = data.name;
+    this.location = data.location;
+    this.likes = data.likes;
   }
 }

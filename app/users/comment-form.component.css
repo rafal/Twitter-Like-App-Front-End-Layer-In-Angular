@@ -13,6 +13,7 @@ form {
   height: 46px;
   margin-top: 10px;
   outline: none;
+  font-weight: bold;
 }
 .commentInput{
   border: hidden;
