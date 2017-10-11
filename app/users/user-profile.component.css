@@ -109,6 +109,22 @@
     line-height: 0;
   }
   .button-follow{
+    background: white;
+    letter-spacing: 4.2px;
+    border-radius: 100px;
+    border: solid 1px #FFA640;
+    color: #FFA640;
+    width: 85%;
+    height: 46px;
+    margin-top: 12px;
+    margin-bottom: 13px;
+    font-weight: bold;
+    outline: none;
+  }
+  .button-follow:hover{
+    background: #ffe0bc;
+  }
+  .button-following{
     background: #FFA640;
     letter-spacing: 4.2px;
     border-radius: 100px;

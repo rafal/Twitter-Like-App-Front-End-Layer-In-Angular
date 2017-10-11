@@ -110,8 +110,26 @@
     padding-bottom: 10px;
     line-height: 0;
   }
-
   .button-follow{
+    background: white;
+    letter-spacing: 4.2px;
+    border-radius: 100px;
+    border: solid 1px #FFA640;
+    color: #FFA640;
+    font-weight: bold;
+    outline: none;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 25px;
+    padding-left: 25px;
+    position: absolute;
+    top: 103px;
+    left: 280px;
+  }
+  .button-follow:hover{
+    background: #ffe0bc;
+  }
+  .button-following{
     background: #FFA640;
     letter-spacing: 4.2px;
     border-radius: 100px;
@@ -127,7 +145,6 @@
     top: 103px;
     left: 280px;
   }
-
   .comments{
     left: 2%;
     right: 2%;

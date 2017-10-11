@@ -33,8 +33,11 @@
       {{followers}}
       <div class="likes-text">Followers</div>
     </div>
-      <button id="follow" class="button-follow" (click)="follow()">
-        {{followStr}}
+      <button *ngIf="alreadyFollowing" class="button-following" (click)="follow()">
+        FOLLOWING
+      </button>
+      <button *ngIf="!alreadyFollowing" class="button-follow" (click)="follow()">
+        FOLLOW
       </button>
   </div>
   

@@ -15,6 +15,10 @@ form {
   outline: none;
   font-weight: bold;
 }
+.addComment:disabled{
+  background: grey;
+  cursor: not-allowed;
+}
 .commentInput{
   border: hidden;
   color: #8298B9;
