@@ -179,6 +179,7 @@
   }
   .activec{
     background: #f7f7f7;
+    border-radius: 5px;
   }
   .date-diff{
     opacity: 0.5;
