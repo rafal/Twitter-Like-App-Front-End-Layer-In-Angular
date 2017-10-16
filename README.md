@@ -1,9 +1,11 @@
-# Twitter-Like-App-Front-End-Layer
+# Twitter-Like-App-Front-End-Layer-In-Angular
 My first angular project that I had to made for a job interview. It mimics Twtitter. It's just the front-end layer as I was applying for the front-end dev position.
 
-![twitter-like app desktop view](https://user-images.githubusercontent.com/17829904/31624437-fd08a390-b2a2-11e7-810c-9d5d2854ddf1.png)
-![twitter-like app mobile view](https://user-images.githubusercontent.com/17829904/31624434-fabad70c-b2a2-11e7-8c46-c290920018bf.png)
+Tech stack:
+Angular 4, CSS, HTML, JavaScript, TypeScript, NPM, Bootstrap, Jasmine
 
+![page-1-artboard](https://user-images.githubusercontent.com/17829904/31624632-a4372a06-b2a3-11e7-8bde-edf7b19fecf4.png)
+![page-1-artboard-copy](https://user-images.githubusercontent.com/17829904/31624633-a45b39fa-b2a3-11e7-94b2-6ab3e7b4b68d.png)
 
 How to install and run it:
 1) Clone the repo
