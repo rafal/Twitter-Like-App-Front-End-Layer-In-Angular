@@ -3,8 +3,9 @@ import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { HttpModule } from '@angular/http';
 import { Component, Input } from '@angular/core';
 import { Comment } from '../shared/models/comment';
+import { NgbdModalBasic } from './modal-basic';
 import { Router } from '@angular/router';
-import {Observable} from 'rxjs/Rx';
+import { Observable } from 'rxjs/Rx';
 
 @Component({
   selector: 'user-profile',
@@ -12,7 +13,8 @@ import {Observable} from 'rxjs/Rx';
   styleUrls: ['./app/users/user-profile.component.css',
               './app/users/user-profile.component.desktop.css',
               './app/users/heart-animation.css',
-              './app/users/scrollbar.css']
+              './app/users/scrollbar.css'
+              ]
 })
 export class UserProfileComponent {
   currentURL='';
@@ -27,7 +29,6 @@ export class UserProfileComponent {
   following:number = 0;
   likes:number = 0;
   like:boolean = false;
-  followStr:string = "FOLLOW";
   name:string = "";
   location:string = "";
   @Input() comment: Comment;
@@ -35,14 +36,18 @@ export class UserProfileComponent {
   showDateDiff(date){
     var today = new Date().getTime();
     var diff = today-date;
-    var days = diff / 1000 / 60 / 60 / 24;
-    var months = days / 30;
-    var years = months / 12;
+    var days = Math.round(diff / 1000 / 60 / 60 / 24);
+    var weeks = Math.round(days / 7);
+    var months = Math.round(days / 30);
+    var years = Math.round(months / 12);
     if (days < 1){
       return "Today";
     } else {
-      if (days < 30) {
+      if (days < 7) {
         return "" + Math.round(days) + "d";
+      } else {
+      if (days < 30) {
+        return "" + Math.round(weeks) + "w";
       } else {
         if (days < 365){
           return "" + Math.round(months) + "m";
@@ -51,7 +56,7 @@ export class UserProfileComponent {
         }
       }
     }
-  }
+  }}
   onCommentCreated(event){
     event.comment.date = new Date().getTime();
     this.comments.push(event.comment);
@@ -78,7 +83,7 @@ export class UserProfileComponent {
     } else {
       this.alreadyFollowing = true;
       this.followers++;
-      this.followStr = "FOLLOWING"
+      this.followStr = "UNFOLLOW"
     }
   }
   toggleComments(){
