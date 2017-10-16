@@ -1,5 +1,5 @@
 # Twitter-Like-App-Front-End-Layer-In-Angular
-My first angular project that I had to made for a job interview. It mimics Twtitter. It's just the front-end layer as I was applying for the front-end dev position.
+Angular 4 project: Twitter-like user-profile component - reusable, responsive design.
 
 Tech stack:
 Angular 4, CSS, HTML, JavaScript, TypeScript, NPM, Bootstrap, Jasmine
