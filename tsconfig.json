@@ -9,6 +9,6 @@
     "removeComments": false,
     "noImplicitAny": false,
     "outDir": "dist",
-    "lib": ["es2017", "dom"]
+    "lib": ["es2015", "dom"]
   }
 }
