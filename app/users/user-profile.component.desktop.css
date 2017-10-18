@@ -173,10 +173,9 @@
     margin-bottom: 15px;
     margin-left: 25px;
     display: inline-block;
-  }
-  .hide-comments:hover{
     text-decoration: underline;
   }
+
   .line-horizontal{
     
     border-bottom: solid #979797;
