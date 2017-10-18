@@ -1,10 +1,9 @@
 <form #form="ngForm" (ngSubmit)="onSubmit()" *ngIf="active">
 
   <div (click)="selectCommentInput()" [ngClass]="{ 'has-error': comment.invalid && comment.touched }">
-    <input type="text" class="form-control commentInput" name="username" placeholder="Add a comment" required [(ngModel)]="newComment.comment" #comment="ngModel">
+    <input type="text" class="form-control commentInput" name="comment" placeholder="Add a comment" required [(ngModel)]="newComment.comment" #comment="ngModel">
     <div class="line-horizontal-add-comment"></div>
-    <span class="help-block" style="text-align: left"
-      *ngIf="comment.invalid && comment.touched">
+    <span class="help-block" style="text-align: left" *ngIf="comment.invalid && comment.touched">
       Comment can't be empty.
     </span>
   </div>
