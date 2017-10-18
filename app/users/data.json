@@ -14,25 +14,25 @@
     {
     "id": "26",
     "username": "Tony Hawk",
-    "comment": "Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. ",
+    "comment": "Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. ",
     "date": "1400387742223"
     },
     {
     "id": "27",
     "username": "John Rambo",
-    "comment": "Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. ",
+    "comment": "Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. ",
     "date": "1500387742223"
     },
     {
     "id": "28",
     "username": "Tom Cruise",
-    "comment": "Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. ",
+    "comment": "Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. ",
     "date": "1507495742223"
     },
     {
     "id": "29",
     "username": "Vin Diesel",
-    "comment": "Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. ",
+    "comment": "Curabitur et ligula.",
     "date": "1507652210962"
     }
   ]
