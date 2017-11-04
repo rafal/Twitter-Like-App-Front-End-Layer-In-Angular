@@ -248,10 +248,4 @@
   .toggle-comments{
     cursor: pointer;
   }
-
-  .profile-picture{
-    max-width: 100%;
-    max-height: 100%;
-    border-radius: 100%;
-  }
 }
